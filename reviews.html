@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Customer Trust | ShopCrysta</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+
+html,body{
+  height:100%;
+  margin:0;
+}
+
+body{
+  font-family:Poppins;
+  background:#f5f9ff;
+  display:flex;
+  flex-direction:column;
+}
+
+.main{flex:1}
+
+.header{
+  background:linear-gradient(to right,#76e4ff,#b6f1ff);
+  padding:50px 20px;
+  font-size:36px;
+  font-weight:600;
+  text-align:center;
+}
+
+.sub{
+  text-align:center;
+  font-size:16px;
+  color:#444;
+  margin-top:-25px;
+}
+
+.stats{
+  max-width:1100px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  padding:0 20px;
+}
+
+.stat{
+  background:#fff;
+  padding:35px 25px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  text-align:center;
+}
+
+.stat h2{color:#0bbcd6;margin:0;font-size:28px}
+.stat p{color:#555;font-size:16px}
+
+.slider{
+  max-width:1100px;
+  margin:50px auto 70px;
+  overflow:hidden;
+  padding:0 20px;
+}
+
+.track{
+  display:flex;
+  gap:25px;
+  animation:scroll 35s linear infinite;
+  width:max-content;
+}
+
+.card{
+  min-width:300px;            /* reduced from 400 */
+  background:#fff;
+  padding:25px 18px;          /* reduced padding */
+  border-radius:16px;
+  box-shadow:0 8px 18px rgba(0,0,0,.08);
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.user{font-weight:600;font-size:16px}
+.city{font-size:13px;color:#666;margin-bottom:4px}
+.star{color:gold;margin:6px 0;font-size:14px}
+.card p{font-size:14px}
+
+
+@keyframes scroll{
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
+
+.user{font-weight:600;font-size:18px}
+.city{font-size:14px;color:#666;margin-bottom:5px}
+.star{color:gold;margin:8px 0;font-size:16px}
+
+.badge{
+  display:inline-block;
+  background:#e6f9fc;
+  color:#088da0;
+  font-size:12px;
+  padding:6px 12px;
+  border-radius:20px;
+  margin-bottom:15px;
+}
+
+.footer{
+  background:#0B1F33;
+  color:#fff;
+  text-align:center;
+  padding:12px;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="main">
+
+  <div class="header">
+    <i class="fa-solid fa-shield-heart"></i> Why Customers Trust ShopCrysta
+  </div>
+
+  <div class="sub">Real opinions from genuine users across India 🇮🇳</div>
+
+  <div class="stats">
+    <div class="stat"><h2>4.8 ★</h2><p>Average Platform Rating</p></div>
+    <div class="stat"><h2>50K+</h2><p>Happy Customers</p></div>
+    <div class="stat"><h2>97%</h2><p>On-time Deliveries</p></div>
+    <div class="stat"><h2>24×7</h2><p>Customer Support</p></div>
+  </div>
+
+  <div class="slider">
+  <div class="track">
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Rohit Sharma</div>
+      <div class="city">Ahmedabad</div>
+      <div class="star">★★★★★</div>
+      <p>Absolutely love shopping here! The delivery is always on time and the products are exactly as described. Makes online shopping stress-free.</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Neha Patel</div>
+      <div class="city">Mumbai</div>
+      <div class="star">★★★★★</div>
+      <p>Fantastic platform! Easy to navigate, clear product details, and excellent customer support. I always know my order is in safe hands.</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Arjun Mehta</div>
+      <div class="city">Bangalore</div>
+      <div class="star">★★★★★</div>
+      <p>Great experience every time I shop. The products arrive quickly and the quality is always top-notch. Highly recommended!</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Pooja Verma</div>
+      <div class="city">Delhi</div>
+      <div class="star">★★★★★</div>
+      <p>Love this platform! Everything from browsing to delivery is smooth. Customer service is friendly and helpful, which makes shopping so enjoyable.</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Karan Singh</div>
+      <div class="city">Jaipur</div>
+      <div class="star">★★★★★</div>
+      <p>Always a pleasant experience! Fast delivery, excellent packaging, and the products are exactly what I expect. I keep coming back for more.</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Anjali Nair</div>
+      <div class="city">Kochi</div>
+      <div class="star">★★★★★</div>
+      <p>Shopping here is so convenient! I love the clear updates on my order and the quality of products is amazing. Totally trust this platform.</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Siddharth Rao</div>
+      <div class="city">Hyderabad</div>
+      <div class="star">★★★★★</div>
+      <p>Excellent service and genuine products! The platform feels reliable, and I always find what I’m looking for. Makes online shopping simple.</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Meera Joshi</div>
+      <div class="city">Pune</div>
+      <div class="star">★★★★★</div>
+      <p>Very happy with my purchases! The app is easy to use, the sellers are trustworthy, and delivery is always quick. I recommend ShopCrysta to everyone.</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Ritika Sharma</div>
+      <div class="city">Chennai</div>
+      <div class="star">★★★★★</div>
+      <p>Love the variety of products! Everything I ordered arrived perfectly packaged and on time. Makes shopping online truly enjoyable.</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Vikram Singh</div>
+      <div class="city">Kolkata</div>
+      <div class="star">★★★★★</div>
+      <p>Superb platform! Easy navigation, amazing deals, and every product I ordered was exactly as shown. I highly recommend it to friends and family.</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Sanya Mehta</div>
+      <div class="city">Surat</div>
+      <div class="star">★★★★★</div>
+      <p>Absolutely satisfied! Fast delivery, authentic products, and helpful customer support. Shopping here is always a pleasant experience.</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Aditya Rao</div>
+      <div class="city">Bhopal</div>
+      <div class="star">★★★★★</div>
+      <p>One of the best shopping experiences! The products are high quality, delivered quickly, and the platform is super reliable. Totally recommend!</p>
+    </div>
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Rohit Sharma</div>
+      <div class="city">Ahmedabad</div>
+      <div class="star">★★★★★</div>
+      <p>Absolutely love shopping here! The delivery is always on time and the products are exactly as described. Makes online shopping stress-free.</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Neha Patel</div>
+      <div class="city">Mumbai</div>
+      <div class="star">★★★★★</div>
+      <p>Fantastic platform! Easy to navigate, clear product details, and excellent customer support. I always know my order is in safe hands.</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Arjun Mehta</div>
+      <div class="city">Bangalore</div>
+      <div class="star">★★★★★</div>
+      <p>Great experience every time I shop. The products arrive quickly and the quality is always top-notch. Highly recommended!</p>
+    </div>
+
+    <div class="card">
+      <div class="badge">Verified User</div>
+      <div class="user">Pooja Verma</div>
+      <div class="city">Delhi</div>
+      <div class="star">★★★★★</div>
+      <p>Love this platform! Everything from browsing to delivery is smooth. Customer service is friendly and helpful, which makes shopping so enjoyable.</p>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div class="footer">
+  © 2025 ShopCrysta — Secure Payments • Fast Delivery • Trusted Sellers
+</div>
+
+</body>
+</html>

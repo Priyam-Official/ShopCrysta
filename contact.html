@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | ShopCrysta</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    background: #f5f5f5;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1; /* takes all space to push footer down */
+}
+
+.header {
+    background: linear-gradient(to right, #0bbcd6, #b6f1ff);
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 40px 20px;
+    gap: 40px;
+}
+
+.card, .contact-form {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 2px solid #0bbcd6;
+    max-width: 450px;
+    flex: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover, .contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card i {
+    color: #0bbcd6;
+    margin-right: 12px;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    color: #0bbcd6;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #0bbcd6;
+}
+
+.contact-form button {
+    background: #0bbcd6;
+    color: #fff;
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background: #09a4c0;
+}
+
+/* footer */
+.footer{
+  background:#0B1F33;
+  color:#fff;
+  text-align:center;
+  padding:15px;
+  font-size:14px;
+}
+
+@media(max-width: 1000px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="main-content">
+    <div class="header"><i class="fa-solid fa-envelope"></i> Contact Us</div>
+
+    <div class="container">
+        <!-- Contact Info Card -->
+        <div class="card">
+            <h2>Get in Touch</h2>
+            <p><i class="fa-solid fa-envelope"></i> support@shopcrysta.com</p>
+            <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+            <p><i class="fa-solid fa-location-dot"></i> 123 ShopCrysta Avenue, Ahmedabad, India</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+  © 2025 ShopCrysta — Secure Payments • Fast Delivery • Trusted Sellers
+</div>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ShopCrysta | Shop Smarter</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    .login-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+    }
+    .login-box {
+      background: #fff;
+      width: 360px;
+      padding: 20px;
+      margin: 120px auto;
+      border-radius: 10px;
+      text-align: center;
+      font-family: Poppins;
+    }
+    .login-box input, .login-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      background: #0bbcd6;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .google-btn { background: #db4437; }
+    .close-btn { float: right; font-size: 22px; cursor: pointer; }
+
+    /* CATEGORY CARDS FIX */
+    .category-card {
+      cursor: pointer;
+      background: #fff;
+      padding: 35px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+      text-decoration: none;
+    }
+    .category-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    .category-card i {
+      font-size: 36px;
+      color: #72ddf7;
+      margin-bottom: 15px;
+    }
+    .category-card h3 {
+      color: #72ddf7;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span>ShopCrysta</span>
+  </div>
+
+  <input type="text" id="searchInput" placeholder="Search for products, brands & categories" class="search-box" />
+
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html" target="_blank">Shop</a>
+    <a href="deals.html" target="_blank">Deals</a>
+    <a href="reviews.html" target="_blank">Reviews</a>
+    <a href="contact.html" target="_blank">Contact</a>
+
+    <a href="#" id="loginLink" onclick="openLogin()">Login</a>
+    <a href="#" id="userGreeting" style="display:none;" onclick="toggleUserBox()"></a>
+  </nav>
+
+  <div class="nav-icons">
+    <div class="cart-icon" onclick="window.location.href='cart.html'">
+      <i class="fa fa-cart-shopping"></i>
+      <span id="cartCount">0</span>
+    </div>
+  </div>
+</header>
+
+<div id="userBox" style="display:none; position:absolute; right:40px; top:80px; background:#fff; border:1px solid #000; padding:12px; width:220px; z-index:999;">
+  <p><b>Name:</b> <span id="uName"></span></p>
+  <p><b>Mobile:</b> <span id="uMobile"></span></p>
+  <p><b>Address:</b> <span id="uAddress"></span></p>
+  <hr>
+  <button style="width:100%; background:#db4437; color:#fff; border:none; padding:6px;" onclick="logout()">Logout</button>
+</div>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Shop Smarter.<br>Live Better.</h1>
+    <p>Discover premium products, exclusive offers, and a smooth shopping experience built for trust and speed.</p>
+    <button class="primary-btn" onclick="window.location.href='shop.html'">Start Shopping</button>
+  </div>
+
+  <div class="hero-image">
+    <img src="Screenshot 2025-12-25 110326.png" alt="ShopCrysta">
+  </div>
+</section>
+
+<section class="categories">
+  <h2>Popular Categories</h2>
+  <div class="category-grid">
+    <div class="category-card" onclick="window.location.href='electronics.html'"><i class="fa-solid fa-mobile-screen"></i><h3>Electronics</h3></div>
+    <div class="category-card" onclick="window.location.href='fashion.html'"><i class="fa-solid fa-shirt"></i><h3>Fashion</h3></div>
+    <div class="category-card" onclick="window.location.href='home.html'"><i class="fa-solid fa-couch"></i><h3>Home & Living</h3></div>
+    <div class="category-card" onclick="window.location.href='fitness.html'"><i class="fa-solid fa-dumbbell"></i><h3>Fitness</h3></div>
+    <div class="category-card" onclick="window.location.href='kids.html'"><i class="fa-solid fa-child"></i><h3>Kids</h3></div>
+    <div class="category-card" onclick="window.location.href='groceries.html'"><i class="fa-solid fa-basket-shopping"></i><h3>Groceries</h3></div>
+    <div class="category-card" onclick="window.location.href='books.html'"><i class="fa-solid fa-book"></i><h3>Books</h3></div>
+    <div class="category-card" onclick="window.location.href='beauty.html'"><i class="fa-solid fa-spa"></i><h3>Skincare & Beauty</h3></div>
+    <div class="category-card" onclick="window.location.href='pets.html'"><i class="fa-solid fa-paw"></i><h3>Pets</h3></div>
+    <div class="category-card" onclick="window.location.href='tools.html'"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Tools</h3></div>
+    <div class="category-card" onclick="window.location.href='accessories.html'"><i class="fa-solid fa-swatchbook"></i><h3>Accessories</h3></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2025 ShopCrysta — Secure Payments • Fast Delivery • Trusted Sellers</p>
+</footer>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal" class="login-modal">
+  <div class="login-box">
+    <span class="close-btn" onclick="closeLogin()">&times;</span>
+    <h2>Login to ShopCrysta</h2>
+
+    <input type="text" placeholder="Full Name">
+    <input type="tel" placeholder="Mobile Number">
+    <textarea placeholder="Address"></textarea>
+
+    <button onclick="sendOTP()">Send OTP</button>
+
+    <div id="otpArea" style="display:none;">
+      <input type="text" id="otp" placeholder="Enter OTP">
+      <button onclick="verifyOTP()">Verify OTP</button>
+    </div>
+
+    <hr>
+    <button class="google-btn">Continue with Google</button>
+  </div>
+</div>
+
+<script>
+  function openLogin(){loginModal.style.display="block"}
+  function closeLogin(){loginModal.style.display="none"}
+
+  let otpCode;
+
+  function sendOTP(){
+    const n=document.querySelector('input[placeholder="Full Name"]').value;
+    const m=document.querySelector('input[placeholder="Mobile Number"]').value;
+    const a=document.querySelector('textarea').value;
+
+    if(!n||!m||!a){alert("Fill all details");return;}
+
+    localStorage.setItem("user",JSON.stringify({n,m,a}));
+    otpCode=Math.floor(1000+Math.random()*9000);
+    alert("Demo OTP: "+otpCode);
+    otpArea.style.display="block";
+  }
+
+  function verifyOTP(){
+    if(otp.value==otpCode){
+      closeLogin();
+      showUser();
+    } else alert("Invalid OTP");
+  }
+
+  function showUser(){
+    const u=JSON.parse(localStorage.getItem("user"));
+    if(!u) return;
+    loginLink.style.display="none";
+    userGreeting.style.display="inline";
+    userGreeting.innerText="Hi, "+u.n;
+    uName.innerText=u.n;
+    uMobile.innerText=u.m;
+    uAddress.innerText=u.a;
+  }
+
+  function toggleUserBox(){
+    userBox.style.display=userBox.style.display==="block"?"none":"block";
+  }
+
+  function logout(){
+    localStorage.removeItem("user");
+    userBox.style.display="none";
+    userGreeting.style.display="none";
+    loginLink.style.display="inline";
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cartCount").innerText = cart.length;
+  }
+
+  function addToCart(name, price, img) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({ name, price, img });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    alert(`${name} added to cart!`);
+  }
+
+  window.onload = () => {
+    showUser();
+    updateCartCount();
+  };
+</script>
+
+</body>
+</html>

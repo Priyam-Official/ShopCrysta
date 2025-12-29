@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shop | ShopCrysta</title>
+
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+  font-family: 'Poppins', Arial, sans-serif;
+  margin:0;
+  background:#7EE3F7; /* homepage blue */
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* main section */
+.shop-section{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding-top:40px;
+}
+
+.shop-section h1{
+  font-size:36px;
+  font-weight:600;
+  color:#000;
+  margin-bottom:30px;
+}
+
+/* cards grid */
+.grid{
+  max-width:1200px;
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+  padding:0 40px 60px;
+}
+
+.card{
+  background:#fff;
+  padding:35px 20px;
+  text-align:center;
+  border-radius:18px;
+  box-shadow:0 8px 22px rgba(0,0,0,.12);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 16px 30px rgba(0,0,0,.18);
+}
+
+.card i{
+  font-size:42px;
+  color:#4FC3F7;
+  margin-bottom:15px;
+}
+
+.card h3{
+  font-size:16px;
+  font-weight:500;
+  color:#000;
+  margin:0;
+}
+
+.card{
+  border: 2.5px solid rgba(0,0,0,0.6);
+}
+
+
+a{ text-decoration:none }
+
+/* footer */
+.footer{
+  background:#0B1F33;
+  color:#fff;
+  text-align:center;
+  padding:10px 15px;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="shop-section">
+  <h1>Shop Categories</h1>
+
+  <div class="grid">
+    <a href="electronics.html" class="card"><i class="fa-solid fa-mobile"></i><h3>Electronics</h3></a>
+    <a href="fashion.html" class="card"><i class="fa-solid fa-shirt"></i><h3>Fashion</h3></a>
+    <a href="home.html" class="card"><i class="fa-solid fa-couch"></i><h3>Home & Living</h3></a>
+    <a href="fitness.html" class="card"><i class="fa-solid fa-dumbbell"></i><h3>Fitness</h3></a>
+    <a href="kids.html" class="card"><i class="fa-solid fa-child"></i><h3>Kids</h3></a>
+    <a href="groceries.html" class="card"><i class="fa-solid fa-basket-shopping"></i><h3>Groceries</h3></a>
+    <a href="books.html" class="card"><i class="fa-solid fa-book"></i><h3>Books</h3></a>
+    <a href="beauty.html" class="card"><i class="fa-solid fa-spa"></i><h3>Skincare & Beauty</h3></a>
+    <a href="pets.html" class="card"><i class="fa-solid fa-paw"></i><h3>Pets</h3></a>
+    <a href="tools.html" class="card"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Tools</h3></a>
+    <a href="accessories.html" class="card"><i class="fa-solid fa-swatchbook"></i><h3>Accessories</h3></a>
+  </div>
+</div>
+
+<div class="footer">
+  © 2025 ShopCrysta — Secure Payments • Fast Delivery • Trusted Sellers
+</div>
+
+</body>
+</html>

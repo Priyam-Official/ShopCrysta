@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Checkout | ShopCrysta</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ❌ NO CHANGES IN CSS */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+}
+.hero {
+    background: linear-gradient(to right, #a0e9ff, #d2f0ff);
+    padding: 50px 20px;
+    text-align: center;
+}
+.hero h1 { font-size: 2.5em; margin-bottom: 10px; }
+.hero p { font-size: 1em; color: #333; margin-bottom: 30px; }
+
+.checkout-box {
+    background: #fff;
+    padding: 30px;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.checkout-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+.checkout-box h3 { margin-top: 20px; }
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.payment-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.payment-option:hover {
+    border-color: #0bbcd6;
+    background: #e0f7ff;
+}
+.payment-option.selected {
+    border-color: #0bbcd6;
+    background: #d0f0ff;
+}
+
+.primary-btn {
+    width: 100%;
+    background: #0bbcd6;
+    color: #fff;
+    padding: 14px;
+    border:none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 15px;
+}
+.primary-btn:hover { background: #09a5c1; }
+
+.footer {
+    background:#0B1F33;
+    color:#fff;
+    text-align:center;
+    padding:10px 15px;
+    font-size:14px;
+    margin-top:auto;
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>Checkout</h1>
+    <p>Fill in your details and select your preferred payment method to complete your order.</p>
+</section>
+
+<div class="checkout-box">
+    <input id="fullName" placeholder="Full Name">
+    <input id="address" placeholder="Address">
+    <input id="cardNumber" placeholder="Card Number (if using Card)">
+
+    <h3>Payment Method</h3>
+    <div class="payment-options">
+        <div class="payment-option selected" data-value="COD">
+            <span>Cash on Delivery</span>
+            <div class="checkmark"></div>
+        </div>
+        <div class="payment-option" data-value="UPI">
+            <span>UPI</span>
+            <div class="checkmark"></div>
+        </div>
+        <div class="payment-option" data-value="NetBanking">
+            <span>Net Banking</span>
+            <div class="checkmark"></div>
+        </div>
+        <div class="payment-option" data-value="Card">
+            <span>Debit/Credit Card</span>
+            <div class="checkmark"></div>
+        </div>
+    </div>
+
+    <button class="primary-btn" onclick="placeOrder()">Place Order</button>
+</div>
+
+<div class="footer">
+    © 2025 ShopCrysta — Secure Payments • Fast Delivery • Trusted Sellers
+</div>
+
+<script>
+let selectedPayment = "COD";
+const options = document.querySelectorAll('.payment-option');
+
+options.forEach(opt => {
+    opt.addEventListener('click', () => {
+        options.forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        selectedPayment = opt.dataset.value;
+    });
+});
+
+/* ✅ ADDED (1 small function) */
+function clearCart(){
+    localStorage.removeItem("cart");
+}
+
+function placeOrder() {
+    const name = document.getElementById("fullName").value;
+    const address = document.getElementById("address").value;
+    const card = document.getElementById("cardNumber").value;
+
+    if(!name || !address){
+        alert("Please fill all required details!");
+        return;
+    }
+
+    if(selectedPayment === "COD"){
+        alert(`Order confirmed!\nPayment will be collected on delivery.\nName: ${name}\nAddress: ${address}`);
+        clearCart();
+    }
+    else if(selectedPayment === "UPI"){
+        const upi = prompt("Enter your UPI ID (e.g., example@upi):");
+        if(upi){
+            alert(`Payment successful via UPI: ${upi}\nOrder confirmed!`);
+            clearCart();
+        } else alert("Payment cancelled.");
+    }
+    else if(selectedPayment === "NetBanking"){
+        const bank = prompt("Enter your Bank Name:");
+        if(bank){
+            alert(`Payment successful via Net Banking: ${bank}\nOrder confirmed!`);
+            clearCart();
+        } else alert("Payment cancelled.");
+    }
+    else if(selectedPayment === "Card"){
+        if(!card){
+            alert("Please enter your card number!");
+            return;
+        }
+        alert(`Payment successful via Card ending ${card.slice(-4)}\nOrder confirmed!`);
+        clearCart();
+    }
+}
+</script>
+</body>
+</html>
